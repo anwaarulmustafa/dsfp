@@ -167,16 +167,16 @@ section p {
   color: #555;
   max-width: 800px;
   margin: 0 auto 30px;
-  line-height: 1.8;
+  line-height: 1;
 }
 
 /* Program Overview */
 #overview {
   /* background: linear-gradient(to bottom, #e3f2fd, #ffffff); */
   background: white;
-  padding: 60px 20px;
+  padding: 50px 20px;
   overflow: hidden; /* Prevents the canvas from overflowing */
-  height: 55vh;
+  height: 70vh;
   /* border-bottom: 2px solid #ddd; */
   font-size: xX-large;
 }

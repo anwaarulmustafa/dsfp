@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Seekho - Invest in Your Future</title>
-    <link rel="stylesheet" href="/index.css">
-
+    <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
     <!-- Main Hook -->
@@ -72,29 +71,86 @@
           margin-bottom: 20px;
           border-radius: 20px; /* Adjust value for more/less rounded corners */
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          position:relative;
         "
       >
-        <div style="display: flex; gap: 5px">
+        <div style="margin-top: -30px; display: inline-flex; position: relative; gap: 0">
           <img
             src="/static/images/student.png"
             alt="Student 3"
-            style="width: 30px; height: 30px; border-radius: 50%"
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              position: absolute;
+              left: 0;
+              z-index: 3;
+            "
           />
           <img
             src="/static/images/muneeb.png"
             alt="Student 2"
-            style="width: 30px; height: 30px; border-radius: 50%"
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              position: absolute;
+              left: 20px;
+              z-index: 2;
+            "
           />
           <img
             src="/static/images/sadaqat.png"
             alt="Student 1"
-            style="width: 30px; height: 30px; border-radius: 50%"
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              position: absolute;
+              left: 40px;
+              z-index: 1;
+            "
           />
         </div>
-        <span style="margin-left: 10px; font-size: 1rem; font-weight: 600"
-          >1,000+ Students Enrolled</span
+
+        <span
+          id="studentCount"
+          style="margin-left: 70px; font-size: 1rem; font-weight: 600"
         >
+          0 Students Enrolled
+        </span>
       </div>
+
+      <script>
+        // Function to animate the number increment
+        function animateCount(element, start, end, duration) {
+          const range = end - start; // Total number to count
+          const increment = range / (duration / 16); // Step size (16ms per frame for smooth animation)
+          let current = start;
+
+          function updateCounter() {
+            current += increment;
+            if (current >= end) {
+              current = end; // Ensure it stops at the end number
+              element.innerHTML = `${Math.round(
+                current
+              ).toLocaleString()}+ Students Enrolled`;
+              return;
+            }
+            element.innerHTML = `${Math.round(
+              current
+            ).toLocaleString()} Students Enrolled`;
+            requestAnimationFrame(updateCounter);
+          }
+          updateCounter();
+        }
+
+        // On window load, trigger the animation
+        window.addEventListener("load", () => {
+          const studentCountElement = document.getElementById("studentCount");
+          animateCount(studentCountElement, 0, 1000, 2000); // Start from 0 to 1,000 in 2 seconds
+        });
+      </script>
       <!-- <span
         style="
           display: block;
