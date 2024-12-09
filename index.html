@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Seekho - Invest in Your Future</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+
+  </head>
+  <body>
+    <!-- Main Hook -->
+    <header id="header" class="main-hook">
+      <div class="marquee">
+        <div class="marquee__content">
+          <span class="marquee__inner">
+            <pre>
+✻   BLESSED FRIDAY SALE   ✻ DATA SEEKHO ✻   BLESSED FRIDAY SALE   ✻</pre
+            >
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+          <span class="marquee__inner">
+            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          </span>
+        </div>
+      </div>
+    </header>
+    <!-- Program Overview -->
+    <section id="overview">
+      <!-- <div id="canvasContainer"> -->
+      <!-- <canvas id="dotsCanvas"></canvas> -->
+      <h1>Learn to Become Top 1% Data Scientist</h1>
+      <p>Unlock the Power of Data</p>
+
+      <div
+        style="
+          display: inline-flex;
+          border: black solid 0.5px;
+          padding: 5px;
+          align-items: center;
+          margin-bottom: 20px;
+          border-radius: 20px; /* Adjust value for more/less rounded corners */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <div style="display: flex; gap: 5px">
+          <img
+            src="/static/images/student.png"
+            alt="Student 3"
+            style="width: 30px; height: 30px; border-radius: 50%"
+          />
+          <img
+            src="/static/images/muneeb.png"
+            alt="Student 2"
+            style="width: 30px; height: 30px; border-radius: 50%"
+          />
+          <img
+            src="/static/images/sadaqat.png"
+            alt="Student 1"
+            style="width: 30px; height: 30px; border-radius: 50%"
+          />
+        </div>
+        <span style="margin-left: 10px; font-size: 1rem; font-weight: 600"
+          >1,000+ Students Enrolled</span
+        >
+      </div>
+      <!-- <span
+        style="
+          display: block;
+          margin-left: 10px;
+          font-size: 1rem;
+          font-weight: 600;
+        "
+        >500+ Students Enrolled</span> -->
+
+      <a href="#get-started" style="display: block; text-decoration: none">
+        <button
+          style="
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+          "
+        >
+          ⚡ Get Started
+        </button>
+      </a>
+
+      <!-- </div> -->
+    </section>
+    <!-- <script src="/static/js/script.js"></script> -->
+
+    <!-- Key Features -->
+    <section id="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>
+          <img
+            src="{{ url_for('static', filename='images/icon1.png') }}"
+            alt="Feature 1"
+          />
+          Hands-on Projects
+        </li>
+        <li>
+          <img
+            src="{{ url_for('static', filename='images/icon2.png') }}"
+            alt="Feature 2"
+          />
+          Expert Mentors
+        </li>
+        <li>
+          <img
+            src="{{ url_for('static', filename='images/icon3.png') }}"
+            alt="Feature 3"
+          />
+          Career Support
+        </li>
+      </ul>
+    </section>
+
+    <!-- Modules -->
+    <section id="modules">
+      <h2>Modules 1 - 9</h2>
+      <p>Covering everything from basics to advanced topics in data science.</p>
+      <div class="modules-grid">
+        {% for i in range(1, 10) %}
+        <div class="module">
+          <h3>Module {{ i }}</h3>
+          <p>Details about Module {{ i }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Why Invest -->
+    <section id="invest">
+      <h2>Why Invest in Your Future?</h2>
+      <p>Data Science is the future. Secure your dream career today!</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <h2>What Our Students Are Saying</h2>
+      <div class="testimonial">
+        <p>"This program changed my life!" - Student A</p>
+      </div>
+      <div class="testimonial">
+        <p>"Amazing instructors and hands-on projects!" - Student B</p>
+      </div>
+    </section>
+
+    <!-- Meet Your Instructors -->
+    <section id="instructors">
+      <h2>Meet Your Instructors</h2>
+      <div class="instructor">
+        <img
+          src="{{ url_for('static', filename='images/instructor1.png') }}"
+          alt="Instructor 1"
+        />
+        <p>Instructor Name</p>
+      </div>
+    </section>
+
+    <!-- Discord Community -->
+    <section id="community">
+      <h2>Join Our Discord Community</h2>
+      <p>Connect with peers and mentors.</p>
+    </section>
+
+    <!-- Certification -->
+    <section id="certification">
+      <h2>Certification</h2>
+      <p>Get certified and showcase your skills.</p>
+    </section>
+
+    <!-- Enrollment Process -->
+    <section id="enrollment">
+      <h2>Enrollment Process</h2>
+      <ol>
+        <li>Register</li>
+        <li>Pay Fee</li>
+        <li>Start Learning</li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is the duration of the program?</h3>
+        <p>12 weeks.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: info@dataseekho.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 Data Seekho. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
