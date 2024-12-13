@@ -1,5 +1,5 @@
-const canvas = document.getElementById('dotsCanvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("dotsCanvas");
+const ctx = canvas.getContext("2d");
 
 // Resize canvas to fit window width and match header height
 canvas.width = window.innerWidth;
@@ -69,7 +69,9 @@ function connectDots() {
         ctx.beginPath();
         ctx.moveTo(dots[i].x, dots[i].y);
         ctx.lineTo(dots[j].x, dots[j].y);
-        ctx.strokeStyle = `rgba(200, 200, 200, ${1 - distance / connectionDistance})`;
+        ctx.strokeStyle = `rgba(200, 200, 200, ${
+          1 - distance / connectionDistance
+        })`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -78,11 +80,11 @@ function connectDots() {
 }
 
 // Handle Mouse Interaction (Particles react to mouse movement)
-canvas.addEventListener('mousemove', (event) => {
+canvas.addEventListener("mousemove", (event) => {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
 
-  dots.forEach(dot => {
+  dots.forEach((dot) => {
     const dx = dot.x - mouseX;
     const dy = dot.y - mouseY;
     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -97,15 +99,10 @@ canvas.addEventListener('mousemove', (event) => {
 // Animation Loop
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  dots.forEach(dot => dot.update());
+  dots.forEach((dot) => dot.update());
   connectDots();
   requestAnimationFrame(animate);
 }
 
 animate();
 
-// Adjust Canvas Size on Resize
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = 500; // Match header height
-});

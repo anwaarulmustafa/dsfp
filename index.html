@@ -3,78 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Data Seekho - Invest in Your Future</title>
+
     <link rel="stylesheet" href="/index.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.0.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> -->
   </head>
+
   <body>
     <!-- Main Hook -->
     <header id="header" class="main-hook">
       <div class="marquee">
         <div class="marquee__content">
-          <span class="marquee__inner">
-            <pre>
-✻   BLESSED FRIDAY SALE   ✻ DATA SEEKHO ✻   BLESSED FRIDAY SALE   ✻</pre
-            >
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
-          </span>
-          <span class="marquee__inner">
-            <pre> <strong>DATA SEEKHO</strong> ✻   BLESSED FRIDAY SALE   ✻</pre>
+          <span class="marquee__inner" id="marqueeText">
+            ✻ BLESSED FRIDAY SALE ✻ DATA SEEKHO ✻ BLESSED FRIDAY SALE
           </span>
         </div>
       </div>
     </header>
+
+    <script>
+      // Adjust Canvas Size on Resize
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = 500; // Match header height
+      });
+
+      // JavaScript to repeat the marquee text
+      window.onload = function () {
+        const marqueeText = document.getElementById("marqueeText");
+        const originalText = marqueeText.innerHTML;
+
+        // Set the marquee text to repeat by appending the same text
+        for (let i = 0; i < 10; i++) {
+          marqueeText.innerHTML += originalText; // Repeat the text multiple times
+        }
+
+        // Ensure that the stars are green in the repeated text
+        marqueeText.innerHTML = marqueeText.innerHTML.replace(
+          /✻/g,
+          '<span class="star">✻</span>'
+        );
+      };
+    </script>
     <!-- Program Overview -->
     <section id="overview">
       <!-- <div id="canvasContainer"> -->
       <!-- <canvas id="dotsCanvas"></canvas> -->
-      <h1>Learn to Become Top 1% Data Scientist</h1>
-      <p>Unlock the Power of Data</p>
+      <h2>Learn to Become Top 1% Data Scientist</h2>
+      <h6>Unlock the Power of Data</h6>
 
       <div
         style="
           display: inline-flex;
           border: black solid 0.5px;
-          padding: 5px;
+          padding: 10px;
           align-items: center;
           margin-bottom: 20px;
           border-radius: 20px; /* Adjust value for more/less rounded corners */
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          position:relative;
+          position: relative;
         "
       >
-        <div style="margin-top: -30px; display: inline-flex; position: relative; gap: 0">
+        <div
+          style="
+            margin-top: -30px;
+            display: inline-flex;
+            position: relative;
+            gap: 0;
+          "
+        >
           <img
             src="/static/images/student.png"
             alt="Student 3"
@@ -151,14 +156,7 @@
           animateCount(studentCountElement, 0, 1000, 2000); // Start from 0 to 1,000 in 2 seconds
         });
       </script>
-      <!-- <span
-        style="
-          display: block;
-          margin-left: 10px;
-          font-size: 1rem;
-          font-weight: 600;
-        "
-        >500+ Students Enrolled</span> -->
+
 
       <a href="#get-started" style="display: block; text-decoration: none">
         <button
@@ -183,31 +181,123 @@
 
     <!-- Key Features -->
     <section id="features">
-      <h2>Key Features</h2>
+      <!-- <h1>Key Features</h1> -->
       <ul>
         <li>
           <img
-            src="{{ url_for('static', filename='images/icon1.png') }}"
+            src="/static/images/zoom-classes.png"
             alt="Feature 1"
           />
-          Hands-on Projects
+          <h5>Online ZOOM Classes</h5>
         </li>
         <li>
           <img
-            src="{{ url_for('static', filename='images/icon2.png') }}"
-            alt="Feature 2"
+          src="/static/images/Live-sessions.png"
+          alt="Feature 2"
           />
-          Expert Mentors
+          <h5>LIVE-Sessions</h5>
         </li>
         <li>
           <img
-            src="{{ url_for('static', filename='images/icon3.png') }}"
-            alt="Feature 3"
+          src="/static/images/asignment.png"
+          alt="Feature 3"
           />
-          Career Support
+          <h5>Assignments & Projects</h5>
+        </li>
+        <li>
+          <img
+          src="/static/images/self-learning.png"
+          alt="Feature 4"
+          />
+          <h5>Self-Learning Time</h5>
         </li>
       </ul>
     </section>
+
+    <div class="container">
+      <div
+        style="
+          text-align: center;
+          padding: 10px;
+          font-size: 18px;
+          font-weight: bold;
+        "
+      >
+        Companies Our Alumni Are Working At
+      </div>
+      <section class="customer-logos slider">
+        <div class="slide">
+          <img
+            src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"
+          />
+        </div>
+      </section>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".customer-logos").slick({
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 0, // Speed is set to 0 for continuous movement
+          speed: 2000, // Adjust speed of movement
+          arrows: false,
+          dots: false,
+          pauseOnHover: false,
+          cssEase: "linear", // Enables continuous smooth scrolling
+          infinite: true, // Enables infinite looping
+          rtl: false, // Slider direction set to left-to-right
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 520,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+          ],
+        });
+
+        // Adjust left-to-right movement
+        $(".slick-track").css("transform", "translateX(100%)");
+      });
+    </script>
 
     <!-- Modules -->
     <section id="modules">
